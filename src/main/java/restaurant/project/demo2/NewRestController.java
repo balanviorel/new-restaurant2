@@ -8,17 +8,17 @@ import org.springframework.web.bind.annotation.RestController;
 public class NewRestController {
 
     @Value("${appetizer.1}")
-    private String appetizer1;
+    private int appetizer1;
     @Value("${appetizer.2}")
-    private String appetizer2;
+    private int appetizer2;
     @Value("${appetizer.3}")
-    private String appetizer3;
+    private int appetizer3;
     @Value("${appetizer.1.discounted}")
-    private String appetizer1discounted;
+    private int appetizer1discounted;
     @Value("${appetizer.2.discounted}")
-    private String appetizer2discounted;
+    private int appetizer2discounted;
     @Value("${appetizer.3.discounted}")
-    private String appetizer3discounted;
+    private int appetizer3discounted;
 
 
 
@@ -30,9 +30,9 @@ public class NewRestController {
     }
     @GetMapping("/appetizerDiscount")
     public String getDiscountInfo () {
-        return  "Appetizer 1: " + appetizer1discounted +
-                ", Appetizer 2: " + appetizer2discounted +
-                ", Appetizer 3: " + appetizer3discounted;
+        return  "Appetizer 1 discounted: " + (appetizer1)/2 +
+                ", Appetizer 2 discounted: " + (appetizer2)/2 +
+                ", Appetizer 3 discounted: " + (appetizer3)/2;
 
     }
 
